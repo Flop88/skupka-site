@@ -488,15 +488,64 @@
                                     <h2 class="newsletter-title">обратный звонок</h2>
                                     <p>Оставьте ваш номер <br class="hidden-xs">и мы перезвоним вам в течении 1 жизни.</p>
                                 </div>
-                                <div class="subscribe clearfix">
-                                    <form action="#">
+                                <div class="some-form subscribe clearfix">
+                                    <!-- <form action="#">
                                         <input type="text" name="name" placeholder="Ваше имя"/>
                                         <input type="text" name="text" placeholder="Что продаете"/>
                                         <input type="text" name="number" placeholder="Ваш номер телефона"/>
                                         <CENTER><button class="btn btn-primary btn-hover-2" type="submit">отправить</button></CENTER>
-                                    </form>
+                                    </form> -->
+                                    <form action="telegram.php" method="POST" class="formWithValidationn">
+                                        <div class="form-group">
+                                            <label for="">Введите ваше имя</label>
+                                            <input type="text" class="form-control userName field" id="" name="user_name" placeholder="Например, Иван" >
+                                        </div>
                                     
+                                        <div class="form-group">
+                                            <label for="">Введите номер телефона</label>
+                                            <input type="tel" class="form-control userPhone field" id="" name="user_phone" placeholder="+7 (999) 99 99 999" >
+                                           </div>
+                                    
+                                        <div class="form-group">
+                                            <label for="">Что продаете</label>
+                                            <input type="text" class="form-control userDevice field" id="" name="user_device" placeholder="iPhone X 256gb" >
+
+                                        </div>
+                                        <div class="some-form__submit">
+                                            <center><input type="submit" value="Отправить" class="button button_submit button_wide"></center>
+                            
+                                        </div>
+                                        
+                                    </form>
                                 </div>
+
+                                <script type="text/javascript">
+                                    $(document).ready(function(){
+  
+                                        $('input[type="tel"]').inputmask('+7 (999) 999 99 99', {
+                                            clearMaskOnLostFocus: true,
+                                        });
+                                        
+                                        $('.js-form-validate').submit(function () {
+                                            var form = $(this);
+                                            var field = [];
+                                            form.find('input[data-validate]').each(function () {
+                                            field.push('input[data-validate]');
+                                            var value = $(this).val(),
+                                                line = $(this).closest('.some-form__line');
+                                            for(var i=0;i<field.length;i++) {
+                                                if( !value ) {
+                                                line.addClass('some-form__line-required');
+                                                setTimeout(function() {
+                                                    line.removeClass('some-form__line-required')
+                                                }.bind(this),2000);
+                                                event.preventDefault();
+                                                }
+                                            }
+                                            });
+                                        });
+                                        });
+                                  </script>
                             </div>
                         </div>
                     </div>

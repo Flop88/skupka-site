@@ -1,47 +1,3 @@
-/*
-
-  Template Name: Subas Ecommerce Responsive Bootstrap Template
-  Description: This is html5 template
-  Author: codecarnival
-  Version: 1.0
-  Design and Developed by: codecarnival
-  NOTE: If you have any note put here. 
-
-*/
-/*================================================
-[  Table of contents  ]
-================================================
-
-    1. jQuery MeanMenu
-    2. wow js active
-    3. jQuery Nivo Slider (home-2)
-    4. Slick Carousel 
-        4.1 Active Slider - 1 (home-1)
-        4.2 Active By Brand
-        4.3 Active Featured Product
-        4.4 Active Blog
-        4.5 Active Blog 2
-        4.6 Active Related Product
-		4.7 Active Team Member
-    5. Countdown
-    6. ScrollUp
-    7. Tooltip 
-    8. Treeview active
-    9. Price Slider
-    10. Fancybox active
-    11. Elevate Zoom active 
-    12. single-product-zoom-image carousel
-    13. Cart Plus Minus Button
-    14. bootstrap accordion one open at a time
-    15. Cart tab menu active
-    16. Blog page manu dropdown 
-    17. Background Toutube Video 
-    18. STICKY sticky-header
-
-======================================
-[ End table content ]
-======================================*/
-
 (function($) {
     "use strict";
 
@@ -378,3 +334,55 @@
         }
     });
 /* ********************************************************* */
+
+/* ********************************************
+    18. FORM VALIDATION
+******************************************** */
+
+var form = document.querySelector('.formWithValidationn')
+var submitButton = form.querySelector('.button_submit')
+var sendName = form.querySelector('.userName')
+var phone = form.querySelector('.userPhone')
+var device = form.querySelector('.userDevice')
+
+var fields = form.querySelector('.field')
+
+var generateError = function (text) {
+    var error = document.createElement('div')
+    error.className = 'error'
+    error.style.color = 'red'
+    error.innerHTML = text
+    return error
+}
+
+var removeErrors = function () {
+    var errors = form.querySelectorAll('.error')
+    for (let i = 0; i < errors.length; i++) {
+        errors[i].remove()
+    }
+}
+
+var validateInputs = function () {
+    if(!sendName.value) {
+        var error = generateError('Поле не должно быть пустым!')
+        sendName.parentElement.insertBefore(error, sendName)
+    }
+    if(!phone.value) {
+        var error = generateError('Поле не должно быть пустым!')
+        phone.parentElement.insertBefore(error, phone)
+    }
+    if(!device.value) {
+        var error = generateError('Поле не должно быть пустым!')
+        device.parentElement.insertBefore(error, device)
+    }
+}
+
+form.addEventListener('submit', function(event) {
+    if(!sendName.value && !phone.value && !device.value) {
+        event.preventDefault()
+        removeErrors()
+        validateInputs()
+    }
+})
+
+
