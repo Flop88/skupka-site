@@ -182,7 +182,7 @@
             <div class="google-map-section">
                 <div class="container-fluid">
                     <div class="google-map plr-185">
-                        <div id="googleMap"></div>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0f22a8644ab5321c4c6a15bc15b7dfbf52082f913cd44cb1e96f9735f2e76183&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -194,25 +194,19 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="message-box box-shadow white-bg">
-                                <form id="contact-form" action="mail.php" method="post">
+                                <form id="contact-form" action="telegram.php" method="post">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h4 class="blog-section-title border-left mb-30">get in touch</h4>
+                                            <h4 class="blog-section-title border-left mb-30">Оставить заявку</h4>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="name" placeholder="Your name here">
+                                            <input type="text" name="user_name" placeholder="Имя">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="email" placeholder="Your email here">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" name="subject" placeholder="Subject here">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" name="phone" placeholder="Your phone here">
+                                            <input type="text" name="user_phone" placeholder="79101112233">
                                         </div>
                                         <div class="col-md-12">
-                                            <textarea class="custom-textarea" name="message" placeholder="Message"></textarea>
+                                            <textarea class="custom-textarea" name="user_device" placeholder="Текст сообщения"></textarea>
                                             <button class="submit-btn-1 mt-30 btn-hover-1" type="submit">submit message</button>
                                         </div>
                                     </div>
@@ -237,9 +231,9 @@
                                 <img src="img/logo/logo.png" alt="">
                             </div>
                             <ul class="footer-menu-2">
-                                <li><a href="#">Главная</a></li>
-                                <li><a href="#">О нас</a></li>
-                                <li><a href="#">Контакты</a></li>
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="about.html">О нас</a></li>
+                                <li><a href="contact.html">Контакты</a></li>
                             </ul>                                                  
                         </div>
                     </div>
