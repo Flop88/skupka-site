@@ -441,9 +441,8 @@
                 </div>
             </div>
             <!-- BLOG SECTION END -->  
-            <!-- BLOG SECTION END -->   
              
-            <!-- NEWSLETTER SECTION START -->
+            <!-- FORM SECTION START -->
             <div class="newsletter-section section-bg-tb pt-60 pb-80" id="call">
                 <div class="container">
                     <div class="row">
@@ -477,39 +476,12 @@
                                     </form>
                                 </div>
 
-                                <script type="text/javascript">
-                                    $(document).ready(function(){
-  
-                                        $('input[type="tel"]').inputmask('+7 (999) 999 99 99', {
-                                            clearMaskOnLostFocus: true,
-                                        });
-                                        
-                                        $('.js-form-validate').submit(function () {
-                                            var form = $(this);
-                                            var field = [];
-                                            form.find('input[data-validate]').each(function () {
-                                            field.push('input[data-validate]');
-                                            var value = $(this).val(),
-                                                line = $(this).closest('.some-form__line');
-                                            for(var i=0;i<field.length;i++) {
-                                                if( !value ) {
-                                                line.addClass('some-form__line-required');
-                                                setTimeout(function() {
-                                                    line.removeClass('some-form__line-required')
-                                                }.bind(this),2000);
-                                                event.preventDefault();
-                                                }
-                                            }
-                                            });
-                                        });
-                                        });
-                                  </script>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- NEWSLETTER SECTION END -->            
+            <!-- FORM SECTION END -->            
         </section>
         <!-- END PAGE CONTENT -->
 
