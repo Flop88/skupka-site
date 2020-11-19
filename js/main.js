@@ -366,19 +366,21 @@ var validateInputs = function () {
     if(!sendName.value) {
         var error = generateError('Поле не должно быть пустым!')
         sendName.parentElement.insertBefore(error, sendName)
-    }
+    } 
     if(!phone.value) {
         var error = generateError('Поле не должно быть пустым!')
         phone.parentElement.insertBefore(error, phone)
-    }
-    if(!device.value) {
+    } else if (phone.value.length < 10) {
+        var error = generateError('Некорректный номер телефона!')
+        phone.parentElement.insertBefore(error, phone)
+    } else if(!device.value) {
         var error = generateError('Поле не должно быть пустым!')
         device.parentElement.insertBefore(error, device)
-    }
+    } 
 }
 
 form.addEventListener('submit', function(event) {
-    if(!sendName.value && !phone.value && !device.value) {
+    if(!sendName.value || !phone.value || !device.value) {
         event.preventDefault()
         removeErrors()
         validateInputs()
