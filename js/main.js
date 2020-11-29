@@ -393,14 +393,82 @@ form.addEventListener('submit', function(event) {
 ******************************************** */
 
 var modal = document.getElementById("callbackModal");
-var btn = document.getElementById("callbackButton");
-var btn2 = document.getElementsByClassName("callbackButton2");
+var goods = document.getElementById("goods")
+
+// 1 row
+var iPhoneBtn = document.getElementById("callbackButtonIphone");
+var watchBtn = document.getElementById("callbackButtonWatch");
+var macbookBtn = document.getElementById("callbackButtonMacbook");
+var ipadBtn = document.getElementById("callbackButtonIpad");
+
+// 2 row
+var phonesBtn = document.getElementById("callbackButtonPhones");
+var tabletsBtn = document.getElementById("callbackButtonTablets");
+var tvBtn = document.getElementById("callbackButtonTv");
+var laptopsBtn = document.getElementById("callbackButtonLaptops");
+
+// 3 row
+var smartWatchesBtn = document.getElementById("callbackButtonSwatch");
+var podsBtn = document.getElementById("callbackButtonPods");
+var monoblocksBtn = document.getElementById("callbackButtonMonoblocks");
+var consoleBtn = document.getElementById("callbackButtonConsole");
+
 var span = document.getElementsByClassName("close")[0];
 
-
-btn.onclick = function() {
+// 1 row
+iPhoneBtn.onclick = function() {
     modal.style.display = "block";
-  }
+    goods.value = 'iPhone ';
+
+}
+watchBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Apple Watch  ';
+}
+macbookBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Macbook ';
+}
+ipadBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'iPad ';
+}
+
+// 2 row
+phonesBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Телефон ';
+}
+tabletsBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Планшет ';
+}
+tvBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Телевизор ';
+}
+laptopsBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Ноутбук ';
+}
+
+// 3 row
+smartWatchesBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Смарт-часы ';
+}
+podsBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Наушники ';
+}
+monoblocksBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Моноблок ';
+}
+consoleBtn.onclick = function() {
+    modal.style.display = "block";
+    goods.value = 'Приставка ';
+}
   
 span.onclick = function() {
     modal.style.display = "none";
